@@ -1,23 +1,17 @@
 "use strict";
 
-const categoriesRef = document.querySelector('#categories').children;
+const categoriesRef = document.querySelector("#categories").children;
 console.log(`В списке ${categoriesRef.length} категории`);
 
-const titleListRef = document.querySelectorAll('h2');
+const titleListRef = Array.from(document.querySelectorAll("h2"));
+titleListRef.forEach((item) => console.log(`Категория: ${item}`));
+// Не срабатывает вывод шаблонной строки
 
-// const arrayTitleList = Array.from(titleListRef);
-// console.log(arrayTitleList[0]);
-
-// console.log(titleListRef[0]);
-// console.log(titleListRef[1]);
-// console.log(titleListRef[2]);
-
-const listRef = document.querySelectorAll('li.item li').length;
+const mainListRef = document.querySelectorAll("li.item ul");
+console.log(mainListRef);
+// Достучалась до нижнего ul
+const listRef =document.body.querySelectorAll("li");
 console.log(listRef);
+// пытаюсь добраться до массива нижних лишек
 
-
-
-
-
-
-
+// отображается длинна массива всех li в документе
