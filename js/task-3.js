@@ -34,6 +34,4 @@ const insertAdjacentHTML = (images) => {
   return listRef;
 };
 
-insertAdjacentHTML(images[0]);
-insertAdjacentHTML(images[1]);
-console.log(insertAdjacentHTML(images[2]));
+images.forEach(image=>console.log(insertAdjacentHTML(image)));

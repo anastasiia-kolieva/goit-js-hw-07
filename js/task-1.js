@@ -7,13 +7,16 @@ const titleListRef = Array.from(document.querySelectorAll("h2"));
 titleListRef.forEach((item) => console.log(`Категория: ${item}`));
 // // Не срабатывает вывод шаблонной строки, не указывается вместо item значение h2
 
-const mainListRef = Array.from(document.querySelectorAll("li.item ul"));
-mainListRef.forEach(() => {
-  const listRef = mainListRef.querySelectorAll("li").length;
-  console.log(`Количество элементов: ${listRef}`);
-});
 
-// const mainListRef = document.querySelector("li.item ul");
-// const listRef = mainListRef.querySelectorAll("li").length;
-// console.log(`Количество элементов: ${listRef}`);
-// Удалось вывести количество пунктов только одного первого списка
+// Попыталась написать функцию для вывода количества лишек
+const itemListRef = Array.from(document.querySelectorAll(".item"));
+
+const getAmountOflist = (item) => {
+  const mainListRef = document.querySelector("li.item ul");
+  const listRef = Array.from(mainListRef.querySelectorAll("li"));
+  return console.log(`Количество элементов: ${listRef.length}`);
+};
+
+itemListRef.forEach((item) => getAmountOflist(itemListRef));
+
+// Выводит три одинаковых сообщение о количестве лишек первого списка
