@@ -5,13 +5,15 @@ console.log(`В списке ${categoriesRef.length} категории`);
 
 const titleListRef = Array.from(document.querySelectorAll("h2"));
 titleListRef.forEach((item) => console.log(`Категория: ${item}`));
-// Не срабатывает вывод шаблонной строки
+// // Не срабатывает вывод шаблонной строки, не указывается вместо item значение h2
 
-const mainListRef = document.querySelectorAll("li.item ul");
-console.log(mainListRef);
-// Достучалась до нижнего ul
-const listRef =document.body.querySelectorAll("li");
-console.log(listRef);
-// пытаюсь добраться до массива нижних лишек
+const mainListRef = Array.from(document.querySelectorAll("li.item ul"));
+mainListRef.forEach(() => {
+  const listRef = mainListRef.querySelectorAll("li").length;
+  console.log(`Количество элементов: ${listRef}`);
+});
 
-// отображается длинна массива всех li в документе
+// const mainListRef = document.querySelector("li.item ul");
+// const listRef = mainListRef.querySelectorAll("li").length;
+// console.log(`Количество элементов: ${listRef}`);
+// Удалось вывести количество пунктов только одного первого списка
