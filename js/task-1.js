@@ -4,9 +4,7 @@ const categoriesRef = document.querySelector("#categories").children;
 console.log(`В списке ${categoriesRef.length} категории`);
 
 const titleListRef = Array.from(document.querySelectorAll("h2"));
-titleListRef.forEach((item) => console.log(`Категория: ${item}`));
-// // Не срабатывает вывод шаблонной строки, не указывается вместо item значение h2
-
+titleListRef.forEach((title) => console.log(`Категория: ${title.value}`));
 
 // Попыталась написать функцию для вывода количества лишек
 // Выводит три одинаковых сообщение о количестве лишек первого списка
