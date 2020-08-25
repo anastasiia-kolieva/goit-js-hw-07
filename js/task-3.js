@@ -25,11 +25,10 @@ const insertAdjacentHTML = (images) => {
   itemRef.classList.add("item-styles");
   const imageRef = document.createElement("img");
 
-  imageRef.setAttribute("url", images.url);
+  imageRef.setAttribute("src", images.url);
   imageRef.setAttribute("alt", images.alt);
 
-  listRef.append(itemRef);
-  itemRef.append(imageRef);
+  listRef.append(itemRef,imageRef);
 
   return listRef;
 };
