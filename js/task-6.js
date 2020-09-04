@@ -1,7 +1,7 @@
 "use strict";
 
 const inputRef = document.querySelector("#validation-input");
-const availebaleAmoutOfSymbols = +inputRef.getAttribute("data-length");
+const availebaleAmoutOfSymbols = +inputRef.dataset.length;
 
 inputRef.addEventListener("blur", () => {
   if (inputRef.value.length <= availebaleAmoutOfSymbols) {

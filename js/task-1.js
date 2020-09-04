@@ -3,11 +3,15 @@
 const categoriesRef = document.querySelector("#categories").children;
 console.log(`В списке ${categoriesRef.length} категории`);
 
-const titleListRef = Array.from(document.querySelectorAll("h2"));
-titleListRef.forEach((title) => console.log(`Категория:`, title.textContent));
+const itemListRef = document.querySelectorAll("li.item");
 
-const mainListRef = document.querySelectorAll("li.item > ul");
-mainListRef.forEach((list) => {
-  const listRef = Array.from(list.querySelectorAll("li"));
-  console.log(`Количество элементов:`, listRef.length);
-});
+const categoriesList = [];
+
+itemListRef.forEach((element) =>
+  categoriesList.push(
+    `Категория:${element.firstChild.textContent}, 
+     Количество: ${element.firstElementChild.children.length}`
+  )
+);
+
+console.log(categoriesList);
