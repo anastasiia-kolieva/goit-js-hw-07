@@ -18,19 +18,35 @@ const images = [
   },
 ];
 
-const insertAdjacentHTML = (images) => {
-  const listRef = document.querySelector("#gallery");
-  listRef.classList.add("galary-styles");
-  const itemRef = document.createElement("li");
-  itemRef.classList.add("item-styles");
-  const imageRef = document.createElement("img");
+const listRef = document.querySelector("#gallery");
+listRef.classList.add("gallery-styles");
 
-  imageRef.setAttribute("src", images.url);
-  imageRef.setAttribute("alt", images.alt);
+const itemRefs = images.map((image) => `<li><img src="${image.url}" alt="${image.alt}" /></li>`);
 
-  listRef.append(itemRef,imageRef);
+listRef.insertAdjacentHTML("beforeend", ...itemRefs);
 
-  return listRef;
-};
+console.log(listRef);
 
-images.forEach(image=>console.log(insertAdjacentHTML(image)));
+
+
+
+// Я ещё думала над таким вариантом решения.
+
+// const listRef = document.querySelector("#gallery");
+// listRef.classList.add("gallery-styles");
+// const createListOfItems = images.map((image) => {
+//   const itemRef = document.createElement("li");
+//   const imageRef = document.createElement("img");
+
+//   imageRef.setAttribute("src", image.url);
+//   imageRef.setAttribute("alt", image.alt);
+
+//   itemRef.append(imageRef);
+//   return itemRef;
+// });
+// // На выходе массив li
+
+// createListOfItems.forEach((item)=>listRef.insertAdjacentHTML('beforeend',item));
+
+// console.log(listRef);
+

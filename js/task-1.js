@@ -5,13 +5,10 @@ console.log(`В списке ${categoriesRef.length} категории`);
 
 const itemListRef = document.querySelectorAll("li.item");
 
-const categoriesList = [];
 
-itemListRef.forEach((element) =>
-  categoriesList.push(
-    `Категория:${element.firstChild.textContent}, 
-     Количество: ${element.firstElementChild.children.length}`
-  )
+itemListRef.forEach((element) =>{
+    console.log(`Категория:${element.firstElementChild.textContent}`), 
+    console.log(`Количество: ${element.lastElementChild.children.length}`)
+}
 );
 
-console.log(categoriesList);

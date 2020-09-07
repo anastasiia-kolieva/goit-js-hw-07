@@ -11,13 +11,11 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector("#ingredients");
 
-const createIngredient = ingredients.forEach((ingredient) => {
+const createIngredient = ingredients.map((ingredient) => {
   const list = document.createElement("li");
   list.textContent = ingredient;
   return ingredient;
-  // ingredientsRef.appendChild(list);
 });
 
-console.log(createIngredient)
-
+ingredientsRef.append(...createIngredient);
 console.log(ingredientsRef);
